@@ -14,9 +14,10 @@ const DetailMovie = () => {
   const DetailMovie = useFetch(
     `https://api.themoviedb.org/3/movie/${movieID}?api_key=${API_KEY}`
   );
-  const trailerMovie=useFetch(` https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${API_KEY} `)
-  const findTrailer = trailerMovie.find((item)=> item.type==="Trailer")
-  console.log(findTrailer);
+  const trailerMovie = useFetch(
+    ` https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${API_KEY} `
+  );
+  const findTrailer = trailerMovie.find((item) => item.type === "Trailer");
 
   return (
     <div>
@@ -67,10 +68,10 @@ const DetailMovie = () => {
             <iframe
               width="100%"
               height="315"
-              src={`https://www.youtube.com/embed/${findTrailer.key}`}
+              src={`https://www.youtube.com/embed/${findTrailer && findTrailer.key}`}
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-wrgite; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
