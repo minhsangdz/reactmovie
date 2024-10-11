@@ -14,7 +14,7 @@ const DetailMovie = () => {
   const DetailMovie = useFetch(
     `https://api.themoviedb.org/3/movie/${movieID}?api_key=${API_KEY}`
   );
-  const trailerMovie=useFetch(` https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY} `)
+  const trailerMovie=useFetch(` https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${API_KEY} `)
   const findTrailer = trailerMovie.find((item)=> item.type==="Trailer")
   console.log(findTrailer);
 
